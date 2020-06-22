@@ -1,0 +1,29 @@
+{{title}}
+
+<div *ngIf="title" class="name">{{title}}</div>
+<div *ngIf="name" class="name">{{name}}</div>
+
+<ng-template [ngIf]="name">
+  <div class="name">{{name}}</div>
+</ng-template>
+
+<!-- 
+HTML attribute.  
+<a href="https://www.google.com">Google.com</a>
+<img src="mypath" > -->
+
+<p appHighlight highlightColor="yellow">This is my paragraph.</p>
+<p appHighlight [highlightColor]="'yellow'">This is my paragraph.</p>
+<p appHighlight [highlightColor]="color">This is my paragraph.</p>
+<p appHighlight [highlightColor]="color">This is my paragraph.</p>
+<p appHighlight [highlightColor]="color">This is my paragraph.</p>
+<p appHighlight [highlightColor]="color" defaultColor="violet">This is default color my paragraph.</p>
+
+<p appHighlight>This is my paragraph.</p>
+
+<h4>Pick a color</h4>
+<div>
+  <input type="radio" name="colors" (click)="color='lightgreen'">Green
+  <input type="radio" name="colors" (click)="color='pink'">pink
+  <p appHighlight [highlightColor]="color">This is radio my paragraph.</p>
+</div>

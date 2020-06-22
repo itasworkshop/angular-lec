@@ -1,0 +1,3 @@
+[submodule "concepts"]
+	path = concepts
+	url = https://github.com/itasworkshop/angular-lec.git
