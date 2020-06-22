@@ -1,0 +1,39 @@
+1. what are in directives in angular?
+ans - set of Direction/Instruction to DOM. for making HTML more powerful. Inbuilt or user defined.
+	core api -> @angular/core
+example - component, ngIf,ngFor etc
+
+2. What are types of directives?
+ans - 	1. Component
+	-component is a directive, basic building block of angular UI, Angular app is tree structure of components.
+	-@Component annotation is used to create component.
+	-Component defines a class which contains data and logic, style and HTML template, metadata defines HTML template style and 		selector. 
+	-must belong to NgModule. 
+	-Always associated with template.
+
+	2. Structural Directives - *ngFor,*ngIf (syntactic sugar)
+	- changes structure of the view
+	- change DOM layout by adding or removing DOM elements.
+
+	3. Attribute Directive - ngStyle
+	- directives used as attribute of elements
+	- change appearance or behaviour of an element, compoent or another directive.
+
+
+3. What does * stands for in *ngIf?
+ans - syntactic sugar for
+<div *ngIf="name" class="name">{{name}}</div>
+
+<ng-template [ngIf]="name">
+  <div class="name">{{name}}</div>
+</ng-template>
+
+and understands it as above, angular is translating *ngIf into <ng-template> element where [ngIF] property is binding.
+but from below code is actualy rendered with diagnostic comment.
+
+<!--bindings={
+  "ng-reflect-ng-if": "Rajesh"
+}-->
+
+4. How do you create user defined directive?
+ans - By using @Directive annotation.
