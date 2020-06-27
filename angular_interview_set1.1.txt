@@ -37,3 +37,37 @@ but from below code is actualy rendered with diagnostic comment.
 
 4. How do you create user defined directive?
 ans - By using @Directive annotation.
+
+5. What are pipes? how do we use built in pipes?
+ans: used for transforming input and formatting, exa - 
+DatePipe, UpperCasePipe, LowerCasePipe, CurrencyPipe, DecimalPipe and PercentPipe.
+
+6. what is chaining pipes? or Can we use more than one pipe at a time?how?
+ans: yes we can chain multiple pipes
+<p>{{joindate | date:'MMM' | uppercase}}</p>
+
+7. What is difference among "pipe(|)", ".pipe" and "| async"?
+ans:
+
+8. Can we create our own pipe or how to create customized pipe?
+ans: using @Pipe({name:'custompipe'})
+
+9. How do you check for NaN in advance?
+ans: isNaN()
+Returns a Boolean value that indicates whether a value is the reserved value NaN (not a number).
+
+10. How do you check for undefined, null?
+ans: 
+
+
+
+
+
+
+
+
+
+
+
+
+
