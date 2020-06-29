@@ -59,6 +59,28 @@ Returns a Boolean value that indicates whether a value is the reserved value NaN
 10. How do you check for undefined, null?
 ans: 
 
+11. What are Lifecycle hooks of component or directives?
+ans: - In a lifcycle of components or directives there are few moments during lifecycle of component like creating ,updating and destroying instances in execution. we have some methods of execution during these life cycle- lifecycle hook(methods).
+Exa- ngOnInit, ngOnChanges, ngOnDestroy.
+
+11.1 what is difference between OnInit and ngOnInit?
+ans:OnInit is interface and ngOnInit() is lifecycle hook method.
+
+12. When ngOnInit is called?
+ans: 
+
+13. Which one of these is called first - ngOnChanges or ngOnInit? why?
+ans: ngOnChanges is called first.
+
+14. Which life cycle hook is called first and last out od all methods?
+ans: 1) ngOnChanges- first of all 2) ngOnDestroy- last after all methods.
+
+15. What is sequence of LifeCycle hook methods?
+ans:
+
+
+What is ngModle?
+ans: two way binding.
 
 
 

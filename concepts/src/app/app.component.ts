@@ -8,7 +8,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'concepts';
 
-  name = 'Rajesh';
+  name:string = "Rajesh";
+
+  //name = 'Rajesh';
 
   color = 'green';
 }

@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
 import { HighlightDirective } from './testdirectives/highlight.directive';
 import { TestpipesComponent } from './testpipes/testpipes.component';
 import { TestdirectivesComponent } from './testdirectives/testdirectives.component';
 import { CustomPipePipe } from './testpipes/custom-pipe.pipe';
+import { TestLifeCycleHooksComponent } from './test-life-cycle-hooks/test-life-cycle-hooks.component';
 
 @NgModule({
   declarations: [
@@ -14,10 +16,12 @@ import { CustomPipePipe } from './testpipes/custom-pipe.pipe';
     HighlightDirective,
     TestpipesComponent,
     TestdirectivesComponent,
-    CustomPipePipe
+    CustomPipePipe,    
+    TestLifeCycleHooksComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [],
