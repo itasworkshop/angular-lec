@@ -1,0 +1,148 @@
+1. What is angular architecture?
+2. what is dependency injection?
+3. Using primeNg with angular?
+ans:- https://www.primefaces.org/primeng/
+4. what is ngOnChanges Life Cycle Hook, what is argument in ngOnChanges()?
+ans: @Component({selector: 'my-cmp', template: `...`})
+class MyComponent implements OnChanges {
+  // TODO(issue/24571): remove '!'.
+  @Input() prop!: number;
+
+  ngOnChanges(changes: SimpleChanges) {
+    // changes.prop contains the old and the new value...
+  }
+}
+
+5. Change detection strategies in angular?
+ans: https://blog.angular-university.io/onpush-change-detection-how-it-works/
+@Component({
+  selector: 'ns-img',
+  template: `
+    <p>{{ check() }}</p>
+    <img [src]="src">
+  `,
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class ImageComponent {
+  @Input() src: string;
+
+  check() {
+    console.log('image component view checked');
+  }
+}
+
+6. How do we achive routing in angular?
+ans: i) ng Cli adds app-routing.module.ts
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+
+
+const routes: Routes = [];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
+
+ii) Routes array will have routes
+const routes: Routes = [
+  { path: 'first-component', component: FirstComponent },
+  { path: 'second-component', component: SecondComponent },
+];
+
+iii) routerLink and <router-outlet></router-outlet>
+
+7. How to get route parameter in angular routing?
+ans: i) inject ActivatedRoute
+constructor(
+  private route: ActivatedRoute,
+) {}
+
+ii) access query parameters.
+ngOnInit() {
+  this.route.queryParams.subscribe(params => {
+    this.name = params['name'];
+  });
+}
+
+8) How to use filter method in Array?
+ans: Filter gives new array.
+
+users = [
+  {'id':101,'name':'raj'},
+  {'id':102,'name':'rajesh'},
+  {'id':103,'name':'tom'}
+];
+
+newusers = users.filter(user => user.id == 101);
+
+console.log(newusers);
+
+9) How to use sort() in Array?
+ans: default ascending it sorts like array, for customised sorting we can give compare method.
+
+var mixedNumericArray = ['80', '9', '700', 40, 1, 5, 200];
+
+function compareNumbers(a, b) {
+  return a - b;
+}
+
+console.log('Sorted with compareNumbers:', mixedNumericArray.sort(compareNumbers));
+
+10) Testing Basics in angular?
+11) What are reactive form?, what are directives used for formcontrol and form group bindings?
+ans: FormControl() and FormGroup() objects and [formControl], [formGroup] directives.
+
+
+@Component({...})
+export class NameEditorComponent {
+  name = new FormControl('');
+}
+
+<label>
+  Name:
+  <input type="text" [formControl]="name">
+</label>
+
+ngSubmit event listener
+
+12) how to get value from reactive form?
+
+13) What is difference between Subject and BehaviorSubject?
+ans: Subject does not return the current value on Subscription. It triggers only on .next(value) call and return/output the value.
+var subject = new Rx.Subject();
+
+subject.next(1); //Subjects will not output this value
+
+subject.subscribe({
+  next: (v) => console.log('observerA: ' + v)
+});
+subject.subscribe({
+  next: (v) => console.log('observerB: ' + v)
+});
+
+subject.next(2);
+subject.next(3);
+
+BehaviourSubject will return the initial value or the current value on Subscription.
+
+var bSubject= new Rx.BehaviorSubject(0);  // 0 is the initial value
+
+bSubject.subscribe({
+  next: (v) => console.log('observerA: ' + v)  // output initial value, then new values on `next` triggers
+});
+
+bSubject.next(1);  // output new value 1 for 'observer A'
+bSubject.next(2);  // output new value 2 for 'observer A', current value 2 for 'Observer B' on subscription
+
+bSubject.subscribe({
+  next: (v) => console.log('observerB: ' + v)  // output current value 2, then new values on `next` triggers
+});
+
+bSubject.next(3);
+
+14) what is FormControlName directive ?
+ans: FormControlName directive binds each individual input to the form control defined in FormGroup. 
+
+
