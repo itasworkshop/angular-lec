@@ -76,12 +76,30 @@ ans: ngOnChanges is called first.
 ans: 1) ngOnChanges- first of all 2) ngOnDestroy- last after all methods.
 
 15. What is sequence of LifeCycle hook methods?
-ans:
+ans: First of constructor- DI
+	1) ngOnchanges()
+	2) ngOnint()
+	3) ngDocheck() - after  ngOnchanges() on every change detection and after oninit on first run.
+	4) ngAfterContentInit() - once after first DoCheck
+	5) ngAfterContentChecked() - after ngAfterContentInit() once and after every Docheck
+	6)
+
+
+#1 name is not known at construction
+#2 OnChanges: name initialized to "Book Example 1"; previous name initialized to "undefined"
+#3 OnInit
+#4 DoCheck
+#5 AfterContentInit
+#6 AfterContentChecked
+#7 AfterViewInit
+#8 AfterViewChecked
 
 
 What is ngModle?
 ans: two way binding.
 
+16) What is @Input decorator?/parent to child interaction.
+17) What is @Output decorator?.child to parent interaction.
 
 
 

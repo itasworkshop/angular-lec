@@ -1,0 +1,162 @@
+1) Transpilar-
+A transpiler takes ES6 source code and generates ES5 code that can run in every browser. It evengenerates the source map files, which allows to debug directly the ES6 source code from thebrowser. aleternative transpilar - babeljs
+
+- TypeScript is an open source language developed by Microsoft. 
+-"hoisting", which actually declares a variable at the top of the function, even if youdeclared it later
+- var is function scoped but "let" is block scoped.
+- you can initialize a constant with an object and later modifythe object content but const objects can not be reassigned.
+- js allowed default parameters using || operator, es6 made it better in function definition.
+function
+ getPonies(size, page) { size = size ||
+10
+; page = page ||
+1
+;
+}
+function
+ getPonies(size =
+10
+, page =
+1
+) {
+
+- The default value can also be a function call:
+function
+ getPonies(size = defaultSize(), page = size -1)}
+- Rest Operator(...)
+myFruits = ['apple','banana','orange'];
+const [a, ...b] = myFruits;
+
+console.log(a);
+console.log(b);
+
+-Class declarations, unlike function declarations, are not hoisted, so you need to declare a classbefore using it. 
+
+- It can also have static attributes and methods:
+class Pony { 
+static defaultSpeed() { 
+return 10; }}
+const speed = Pony.defaultSpeed();
+
+- A class can have getters and setters, if you want to hook on these operations
+
+- Promises and Callbacks
+- Callback
+getUser(login,function(user) { 
+	getRights(user,function(rights) { 
+		updateMenu(rights); 
+	});
+});
+
+-Promises
+getUser(login) 
+	.then(function(user) { 
+		return getRights(user); 
+	}) 
+	.then(
+	function (rights) { 
+		updateMenu(rights); 
+	})
+
+- a promise is a 'thenable' object, which simply means it has a then method. Thismethod takes two arguments: one success callback and one reject callback.
+
+- The promise has threestates:
+•pending: while the promise is not done, for example, our server call is not completed yet.
+•fulfilled: when the promise is completed with success, for example, the server call returns an OK HTTP status.
+•rejected: when the promise has failed, for example, the server returns a 404 status.
+
+- Creating Promise
+const getUser =function (login) { 
+	return new  Promise(function (resolve, reject) { 
+		// async stuff, like fetching users from server, returning a response 
+		if (response.status === 200) { 
+			resolve(response.data); }
+		else { 
+			reject('No user'); } 
+		});
+	};
+Once you have created the promise, you can register callbacks, using the then method. This method can receive two parameters
+
+- Arrow Function
+getUser(login) 
+	.then(function (user) { 
+		return getRights(user);// getRights is returning a promise }) 
+	.then(function (rights) { 
+		return updateMenu(rights); 
+	})
+
+getUser(login) .then(user => getRights(user)) .then(rights => updateMenu(rights))
+
+- the this stays lexically bounded,which means that these functions don’t have a new this as other functions do.
+use alias or binding for binding this in function.
+
+var maxFinder = { 
+  max:0, 
+  find:function (numbers) { 
+    numbers.forEach(                  
+      function (element) { 
+        if(element > this.max) { 
+          this.max = element; } 
+      }.bind(this)); 
+  }
+};
+
+maxFinder.find([2,3,4]);
+// log the result
+console.log(maxFinder.max);
+
+const maxFinder1 = { 
+  max:0, 
+  find: function (numbers) { 
+    numbers.forEach(element => { 
+      if (element > this.max) { 
+        this.max = element; 
+      } 
+    }); 
+  }
+};
+
+maxFinder1.find([2,3,4]);// log the result
+console.log(maxFinder.max);
+
+- New Map and Set classes.
+const
+ cedric = {id:
+1
+,name:'Cedric' };
+const
+ users =
+new
+ Map();users.
+set
+(cedric.id, cedric);// adds a userconsole.log(users.has(cedric.id));// trueconsole.log(users.size);// 1users.
+delete
+(cedric.id);// removes the user
+
+const
+ cedric = {id:
+1
+,name:'Cedric' };
+const
+ users =
+new
+ Set();users.add(cedric);// adds a userconsole.log(users.has(cedric));// trueconsole.log(users.size);// 1users.
+delete
+(cedric);// removes the user
+
+- Template literals are a new small feature, where you have to use backticks (`) instead of quotes orsimple quotes, and you have a basic templating system, with multiline support:
+const
+ fullname =`Miss${firstname} ${lastname}`;
+
+- Modules 
+- export keyword
+import { bet, start }from './races.service';
+
+- If your module exposes only one function or value or class, you don’t have to use named export,and you can leverage the default keyword.
+- import * as racesService from './races.service';
+
+// pony.js
+export default class Pony {}// races.service.js
+import Pony from './pony';
+
+

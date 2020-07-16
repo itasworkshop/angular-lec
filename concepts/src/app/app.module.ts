@@ -9,6 +9,7 @@ import { TestpipesComponent } from './testpipes/testpipes.component';
 import { TestdirectivesComponent } from './testdirectives/testdirectives.component';
 import { CustomPipePipe } from './testpipes/custom-pipe.pipe';
 import { TestLifeCycleHooksComponent } from './test-life-cycle-hooks/test-life-cycle-hooks.component';
+import { CompInteractionComponent } from './comp-interaction/comp-interaction.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { TestLifeCycleHooksComponent } from './test-life-cycle-hooks/test-life-c
     TestpipesComponent,
     TestdirectivesComponent,
     CustomPipePipe,    
-    TestLifeCycleHooksComponent
+    TestLifeCycleHooksComponent, CompInteractionComponent
   ],
   imports: [
     BrowserModule,

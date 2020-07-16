@@ -1,0 +1,28 @@
+{{title}}
+
+<div>
+  <label>name:
+    <input [(ngModel)]="title" placeholder="name"/>
+  </label>
+</div>
+<div *ngFor='let row of mydata'>
+  {{row.name}}{{row.age}}
+
+</div>
+
+<div>
+  <table>
+    <thead>
+      <th>SNo</th>
+      <th>Name</th>
+      <th>Age</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of mydata ; let i = index">
+<td>{{ i+1}}</td>
+        <td>{{row.name}}</td>
+        <td>{{row.age}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

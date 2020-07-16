@@ -6,11 +6,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'concepts';
 
-  name:string = "Rajesh";
+  agreed = 0;
+  disagreed = 0;
+  users = ['Raj','Rajesh','Tom'];
+
+  onVoted(agreed:boolean){
+    agreed ? this.agreed++ : this.disagreed++;
+  }
+
+  //title = 'concepts';
+
+  //name:string = "Rajesh";
 
   //name = 'Rajesh';
 
-  color = 'green';
+  //color = 'green';
+
+
 }
