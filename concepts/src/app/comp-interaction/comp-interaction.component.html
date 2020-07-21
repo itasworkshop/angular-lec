@@ -1,4 +1,7 @@
 <p>comp-interaction works!</p>
-{{name}} is voting.
-<button (click)="vote(true)">Agree</button>
-<button (click)="vote(false)">Disagree</button>
+<pane id="1" *ngIf="shouldShow"></pane>
+<pane id="2" *ngIf="!shouldShow"></pane>
+
+<button (click)="toggle()">Toggle</button>
+
+<div>Selected: {{selectedPane}}</div>

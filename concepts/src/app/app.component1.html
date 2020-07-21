@@ -2,5 +2,14 @@
 <!-- <app-testpipes></app-testpipes> -->
 <!-- <app-test-life-cycle-hooks [name]="name"></app-test-life-cycle-hooks> -->
 
-<app-comp-interaction>
+
+
+
+
+<h2>Which Season do you like most?</h2>
+<h3>Agree :{{agreed}}, Disagree: {{disagreed}}</h3>
+
+<app-comp-interaction *ngFor="let user of users"
+    [name]="user"
+    (voted)="onVoted($event)">
 </app-comp-interaction>
