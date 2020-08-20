@@ -1,4 +1,9 @@
-TOC - intermediate
+TOC - intermediate pending
 
-1. directives
-2. 
+1. Angular elements
+2. Forms - template driven and reactive, validation
+3. Lazy-loading
+4. Security
+5. CRUD with tokenizaton
+6. Testing
+7. Build and deploy

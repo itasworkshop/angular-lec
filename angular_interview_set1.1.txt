@@ -101,6 +101,10 @@ ans: two way binding.
 16) What is @Input decorator?/parent to child interaction.
 17) What is @Output decorator?.child to parent interaction.
 18) what is @ViewChild()?
+ans: property decorator that configures view query.
+
+19) How do you generate dynamic component in angular?
+ans : using componentFactroyResolver
 
 
 

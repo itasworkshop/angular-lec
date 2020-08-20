@@ -10,6 +10,9 @@ import { TestdirectivesComponent } from './testdirectives/testdirectives.compone
 import { CustomPipePipe } from './testpipes/custom-pipe.pipe';
 import { TestLifeCycleHooksComponent } from './test-life-cycle-hooks/test-life-cycle-hooks.component';
 import { CompInteractionComponent,Pane } from './comp-interaction/comp-interaction.component';
+import { DynamicCompComponent } from './dynamic-comp/dynamic-comp.component';
+import { AddirectiveDirective } from './dynamic-comp/addirective.directive';
+import { AdService } from './dynamic-comp/ad.service';
 
 @NgModule({
   declarations: [
@@ -19,14 +22,14 @@ import { CompInteractionComponent,Pane } from './comp-interaction/comp-interacti
     TestpipesComponent,
     TestdirectivesComponent,
     CustomPipePipe,    
-    TestLifeCycleHooksComponent, CompInteractionComponent
+    TestLifeCycleHooksComponent, CompInteractionComponent, DynamicCompComponent, AddirectiveDirective
   ],
   imports: [
-    BrowserModule,
+    BrowserModule,   
     FormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [AdService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

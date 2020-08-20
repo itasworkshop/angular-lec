@@ -145,4 +145,13 @@ bSubject.next(3);
 14) what is FormControlName directive ?
 ans: FormControlName directive binds each individual input to the form control defined in FormGroup. 
 
+15) what is Singleton services in angular?
+
+16) What is local storage and session storage in angular?
+
+17) Authentication in angular, how do you pass token from angular to java backend?
+
+18) what is CSRF? how do you configure in angular?
+
+19) JWT in angular?
 
